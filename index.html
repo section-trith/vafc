@@ -1,99 +1,176 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Section Trith - Fans VAFC</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Inclure les styles CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section Trith - Fans VAFC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600;" rel="stylesheet">
+
+  <style>
+    :root {  
+      --primary: #e2001a;  
+      --secondary: #f5f5f5;  
+      --text: #333333;  
+      --white: #ffffff;
+    }
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {  
+      background-color: var(--white);  
+      color: var(--text);
+    }
+
+    .hero-section {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      z-index: -1; overflow: hidden;
+    }
+    .hero-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; }
+    .hero-background-left, .hero-background-right { flex: 1; background-size: cover; background-position: center; }
+    .hero-background-left { background-image: url('/fans.png'); }
+    .hero-background-right { 
+      background-image: url('/capture1.jpg'); 
+      animation: slideChange 8s infinite; 
+      transform-origin: center center; 
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+      background-size: 70%; 
+      background-position: center center; 
+      background-repeat: no-repeat;
+    }
+    @keyframes slideChange {
+      0%, 45% { background-image: url('/capture1.jpg'); opacity: 1; transform: scale(1); }
+      46%, 47% { opacity: 0; transform: scale(1.02); }
+      48%, 95% { background-image: url('/capture2.jpg'); opacity: 1; transform: scale(1); }
+      96%, 97% { opacity: 0; transform: scale(1.02); }
+    }
+
+    .snip1573 {
+      background-color: #000;
+      display: inline-block;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      margin: 10px;
+      max-width: 315px;
+      min-width: 230px;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      width: 100%;
+    }
+
+    .snip1573 * {
+      box-sizing: border-box;
+      transition: all 0.35s ease;
+    }
+
+    .snip1573:before,
+    .snip1573:after {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+      transition: all 0.35s ease;
+      background-color: #000000;
+      border-left: 3px solid #fff;
+      border-right: 3px solid #fff;
+      content: '';
+      opacity: 0.9;
+      z-index: 1;
+    }
+
+    .snip1573:before {
+      transform: skew(45deg) translateX(-155%);
+    }
+
+    .snip1573:after {
+      transform: skew(45deg) translateX(155%);
+    }
+
+    .snip1573 img {
+      backface-visibility: hidden;
+      max-width: 100%;
+      vertical-align: top;
+    }
+
+    .snip1573 figcaption {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      z-index: 2;
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0;
+      box-shadow: 0 0 10px #000000;
+    }
+
+    .snip1573 h3 {
+      background-color: #000000;
+      border: 2px solid #fff;
+      color: #fff;
+      font-size: 1em;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin: 0;
+      padding: 5px 10px;
+      text-transform: uppercase;
+    }
+
+    .snip1573 a {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+      z-index: 3;
+    }
+
+    .snip1573:hover > img {
+      opacity: 0.5;
+    }
+
+    .snip1573:hover:before {
+      transform: skew(45deg) translateX(-55%);
+    }
+
+    .snip1573:hover:after {
+      transform: skew(45deg) translateX(55%);
+    }
+
+    .snip1573:hover figcaption {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+  </style>
 </head>
 <body>
+  <header class="hero-section">
+    <div class="hero-background">
+      <figure class="snip1573">
+        <img src="/capture1.jpg" alt="Capture 1" />
+        <figcaption>
+          <h3>Read More</h3>
+        </figcaption>
+        <a href="#"></a>
+      </figure>
+      <figure class="snip1573">
+        <img src="/capture2.jpg" alt="Capture 2" />
+        <figcaption>
+          <h3>Join Us</h3>
+        </figcaption>
+        <a href="#"></a>
+      </figure>
+    </div>
+  </header>
 
-    <!-- Section d'Ouverture avec Image de Trith-Saint-Léger -->
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>Bienvenue chez les Fans VAFC de Trith-Saint-Léger</h1>
-            <p>Supporteurs, passionnés, et fiers représentants de Trith au cœur du VAFC.</p>
-            <a href="#devenir-membre" class="btn">Rejoignez-nous</a>
-        </div>
-        <div class="hero-overlay"></div>
-        <img src="fan.jpg" alt="Image de Trith-Saint-Léger" class="hero-image">
-    </header>
-
-    <!-- Section "À Propos" -->
-    <section id="a-propos" class="about-section">
-        <h2>La Section Trith</h2>
-        <p>Depuis 2023, la Section Trith s'efforce de réunir les passionnés du VAFC, en préservant l'esprit populaire et familial des supporteurs de Trith-Saint-Léger.</p>
-    </section>
-
-    <!-- Section "Nos Activités" avec Grille Dynamique -->
-    <section id="activites" class="activities-section">
-        <h2>Nos Activités</h2>
-        <div class="activities-grid">
-            <div class="activity-card">
-                <h3>Déplacements organisés</h3>
-                <p>Soutenez le VAFC lors des matchs à l'extérieur avec des trajets en bus pour les membres.</p>
-            </div>
-            <div class="activity-card">
-                <h3>Animations en tribune</h3>
-                <p>Rejoignez-nous pour soutenir l'équipe avec des chants, des drapeaux, et une ambiance unique.</p>
-            </div>
-            <div class="activity-card">
-                <h3>Rassemblements communautaires</h3>
-                <p>Participez aux réunions et rassemblements pour partager des moments entre supporteurs.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galerie d'Images avec Lightbox -->
-    <section id="galerie" class="gallery-section">
-        <h2>Galerie</h2>
-        <div class="gallery-carousel">
-            <img src="daniel1.jpg" alt="Photo de l'événement 1">
-            <img src="daniel2.jpg" alt="Photo de l'événement 2">
-            <img src="daniel3.jpg" alt="Photo de l'événement 3">
-        </div>
-    </section>
-
-    <!-- Section Réseaux Sociaux -->
-    <section id="social-media" class="social-section">
-        <h2>Suivez-nous sur les Réseaux Sociaux</h2>
-        <p>Restez informé des dernières nouvelles et événements !</p>
-        <div class="social-links">
-            <a href="https://twitter.com/SectionTrith" target="_blank">Twitter</a>
-            <a href="#lien-facebook" target="_blank">Facebook</a>
-            <a href="#lien-instagram" target="_blank">Instagram</a>
-        </div>
-    </section>
-
-    <!-- Section Devenir Membre -->
-    <section id="devenir-membre" class="membership-section">
-        <h2>Devenir Membre</h2>
-        <p>Rejoignez la Section Trith pour profiter des déplacements, des rassemblements et des événements exclusifs.</p>
-        <button class="btn-more" onclick="toggleMembershipDetails()">En savoir plus sur l'adhésion</button>
-        <div id="membership-details" class="membership-details hidden">
-            <p>En devenant membre, vous bénéficiez de tarifs réduits pour les déplacements en bus et d'un accès privilégié aux activités de la section. Contactez-nous pour plus d'informations !</p>
-        </div>
-    </section>
-
-    <!-- Pied de Page -->
-    <footer class="footer">
-        <div class="footer-logo">
-            <img src="logo-section-trith.png" alt="Logo de la Section Trith">
-            <p>© 2024 Section Trith - VAFC Fans</p>
-        </div>
-        <nav class="footer-nav">
-            <a href="#a-propos">À Propos</a>
-            <a href="#activites">Activités</a>
-            <a href="#galerie">Galerie</a>
-            <a href="#social-media">Réseaux Sociaux</a>
-            <a href="#devenir-membre">Devenir Membre</a>
-        </nav>
-        <div class="footer-legal">
-            <a href="#mentions-legales">Mentions Légales</a> | <a href="#contact">Contact</a>
-        </div>
-    </footer>
-
-    <!-- Scripts JavaScript pour les animations -->
-    <script src="scripts.js"></script>
+  <script>
+    document.querySelectorAll('.snip1573').forEach((element) => {
+      element.addEventListener('mouseleave', function() {
+        element.classList.remove('hover');
+      });
+    });
+  </script>
 </body>
 </html>
